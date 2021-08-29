@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SettingsTableViewCell" customModule="SecretKeyManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FNw-bD-ceh">
+                        <rect key="frame" x="276" y="10" width="44" height="40.333333333333329"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="IdC-Gq-FnX"/>
+                            <constraint firstAttribute="height" constant="44" id="nuR-66-Omg"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yP0-DX-8xL">
+                        <rect key="frame" x="0.0" y="9" width="44" height="42.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="G5o-c5-jha"/>
+                            <constraint firstAttribute="height" constant="44" id="Typ-Ki-lUO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcP-vd-ZpS">
+                        <rect key="frame" x="44" y="0.0" width="232" height="60"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="qcP-vd-ZpS" firstAttribute="leading" secondItem="yP0-DX-8xL" secondAttribute="trailing" id="7cb-1b-3Gy"/>
+                    <constraint firstItem="qcP-vd-ZpS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8RF-Pe-GUF"/>
+                    <constraint firstAttribute="trailing" secondItem="FNw-bD-ceh" secondAttribute="trailing" id="DEd-m3-YTu"/>
+                    <constraint firstAttribute="bottom" secondItem="yP0-DX-8xL" secondAttribute="bottom" constant="8" id="JBy-ke-orG"/>
+                    <constraint firstItem="yP0-DX-8xL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="JV4-JN-IT3"/>
+                    <constraint firstItem="FNw-bD-ceh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Rrc-gP-kob"/>
+                    <constraint firstItem="FNw-bD-ceh" firstAttribute="leading" secondItem="qcP-vd-ZpS" secondAttribute="trailing" id="buL-YB-3eq"/>
+                    <constraint firstItem="yP0-DX-8xL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lLL-Zq-LHj"/>
+                    <constraint firstAttribute="bottom" secondItem="FNw-bD-ceh" secondAttribute="bottom" constant="8" id="n1R-ys-Ejc"/>
+                    <constraint firstAttribute="bottom" secondItem="qcP-vd-ZpS" secondAttribute="bottom" id="vT3-xV-btD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="44" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="leftImageView" destination="yP0-DX-8xL" id="Db9-hH-5MK"/>
+                <outlet property="titleLableView" destination="qcP-vd-ZpS" id="vbi-NP-MNp"/>
+            </connections>
+            <point key="canvasLocation" x="213.84615384615384" y="77.488151658767762"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
