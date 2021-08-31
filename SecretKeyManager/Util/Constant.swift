@@ -19,7 +19,7 @@ let SETTINGS_IMAGE_ARRAY = [
     "hand.raised.fill",
     "folder.fill.badge.minus",
     "folder.fill.badge.plus",
-    "info.circle.fill"
+    "info.circle.fill",
 ]
 
 let LOGIN_MODE_TITLE_ARRAY = ["允许应用截屏", "启用数字密码", "启用手势密码", "启用指纹密码", "关闭所有密码"]
@@ -28,5 +28,8 @@ let LOGIN_MODE_IMAGE_ARRAY = [
     "0.circle.fill",
     "square.grid.3x3.middle.fill",
     "touchid",
-    "person.crop.circle.badge.xmark.fill"
+    "person.crop.circle.badge.xmark.fill",
 ]
+
+let ABOUT_TITLE_ARRAY = ["免责声明", "隐私政策", "更新日志", "当前版本"]
+let ABOUT_IMAGE_ARRAY = ["exoneration", "privacy", "update", "version"]

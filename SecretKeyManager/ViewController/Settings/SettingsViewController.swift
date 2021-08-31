@@ -34,7 +34,10 @@ extension SettingsViewController: UITableViewDelegate {
         print("点击了\(SETTINGS_TITLE_ARRAY[indexPath.row])")
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(LoginModeViewController(), animated: true)
+            let loginModeController = LoginModeViewController()
+            // 由底部带有item的页面跳转之后隐藏底部bar
+            loginModeController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(loginModeController, animated: true)
             break
         case 1:
             print("导出数据")
@@ -43,7 +46,9 @@ extension SettingsViewController: UITableViewDelegate {
             print("导入数据")
             break
         case 3:
-            print("关于应用")
+            let aboutController = AboutViewController()
+            aboutController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(aboutController, animated: true)
             break
         default:
             break

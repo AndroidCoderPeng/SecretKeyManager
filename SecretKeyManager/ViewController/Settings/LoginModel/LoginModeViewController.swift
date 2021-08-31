@@ -84,6 +84,7 @@ extension LoginModeViewController: UITableViewDataSource {
             if sender.isOn {
                 defaults.set("3", for: loginModeKey)
             } else {
+                defaults.set("0", for: loginModeKey)
             }
             break
         case 2:
@@ -91,6 +92,7 @@ extension LoginModeViewController: UITableViewDataSource {
             if sender.isOn {
                 defaults.set("2", for: loginModeKey)
             } else {
+                defaults.set("0", for: loginModeKey)
             }
             break
         case 3:
@@ -98,14 +100,13 @@ extension LoginModeViewController: UITableViewDataSource {
             if sender.isOn {
                 defaults.set("1", for: loginModeKey)
             } else {
+                defaults.set("0", for: loginModeKey)
             }
             break
         case 4:
             // 关闭密码
             if sender.isOn {
                 defaults.set("0", for: loginModeKey)
-            } else {
-                defaults.set("3", for: loginModeKey)
             }
             break
         default:

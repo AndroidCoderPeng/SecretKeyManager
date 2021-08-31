@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "exoneration.png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "exoneration@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "exoneration@3x.png",
+      "idiom" : "iphone",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

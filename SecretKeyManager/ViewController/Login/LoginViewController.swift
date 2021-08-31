@@ -14,7 +14,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let loginModel = defaults.get(for: loginModeKey)
+        let loginModel = defaults.get(for: loginModeKey) ?? "0"
+        print("应用解锁模式: \(loginModel)")
         switch loginModel {
         case "1":
             FingureCheckTool.authenticate { result in
@@ -38,9 +39,11 @@ class LoginViewController: UIViewController {
             break
         case "2":
             print("手势解锁")
+            AppCoordinator.shared.setTabbarScreen()
             break
         case "3":
             print("数字解锁")
+            AppCoordinator.shared.setTabbarScreen()
             break
         default:
             AppCoordinator.shared.setTabbarScreen()
