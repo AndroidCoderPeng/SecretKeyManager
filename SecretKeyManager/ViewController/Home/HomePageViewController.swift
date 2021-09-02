@@ -22,6 +22,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var floatButton: UIButton!
 
+    private let notificationCenter = NotificationCenter.default
     private var timer: Timer?
     private var countSeconds = 30
     private let tips = "本应用不含任何网络通信功能，密码经加密之后仅保存在设备上，不会上传到任何网络存储介质，您可以放心使用！如果依旧不放心，可以在您设备飞行模式下使用本应用！"
@@ -45,11 +46,11 @@ class HomePageViewController: UIViewController {
 //        collectionView.dataSource = self
 //        collectionView.delegate = self
         // 添加Button
-        floatButton.layer.cornerRadius = 20
+        floatButton.layer.cornerRadius = 25
         floatButton.backgroundColor = .mainThemeColor
         view.addSubview(floatButton)
         floatButton.snp.makeConstraints { (make) -> Void in
-            make.size.equalTo(CGSize(width: BUTTON_WIDTH, height: BUTTON_HEIGHT))
+            make.size.equalTo(CGSize(width: 50, height: 50))
             make.bottomMargin.equalTo(-25)
             make.rightMargin.equalTo(-10)
         }
@@ -100,10 +101,25 @@ class HomePageViewController: UIViewController {
     }
 
     @IBAction func scanQrCode(_ sender: Any) {
+        let scnnerController = ScannerViewController()
+        scnnerController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(scnnerController, animated: true)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        // 监听扫码结果
+        notificationCenter.addObserver(forName: .scanResultNotification, object: nil, queue: .main, using: { [self] notification in
+            let alertController = UIAlertController(title: "扫描结果", message: notification.object as? String, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "知道了", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        })
+    }
+
+    deinit {
+        notificationCenter.removeObserver(self)
     }
 
     @IBAction func addSecret(_ sender: Any) {
-
     }
 }
 

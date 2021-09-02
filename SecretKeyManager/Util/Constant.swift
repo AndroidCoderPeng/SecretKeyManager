@@ -10,8 +10,7 @@ import Foundation
 
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width // 设备屏幕宽
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height // 设备屏幕高
-let BUTTON_WIDTH = CGFloat(40) // 按钮宽
-let BUTTON_HEIGHT = CGFloat(40) // 按钮高
+let BUTTON_HEIGHT = CGFloat(36) // 按钮高
 let DATA_SCHEMA_VERSION = UInt64(0) // Realm数据库版本
 
 let canCaptureKey = Key<Bool>("CanCapture") // 允许截屏

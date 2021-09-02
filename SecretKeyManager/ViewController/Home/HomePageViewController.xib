@@ -33,10 +33,10 @@
                     <rect key="frame" x="10" y="54" width="370" height="82"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvg-DS-7Qh">
-                            <rect key="frame" x="8" y="10" width="42" height="50"/>
+                            <rect key="frame" x="8" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="42" id="A7l-sP-Vko"/>
+                                <constraint firstAttribute="width" constant="41" id="A7l-sP-Vko"/>
                                 <constraint firstAttribute="height" constant="50" id="Cm9-nE-ZDa"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
@@ -44,21 +44,21 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVE-S7-Fz6">
-                            <rect key="frame" x="108" y="10" width="42" height="50"/>
+                            <rect key="frame" x="106" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="j6d-Bi-qMy"/>
-                                <constraint firstAttribute="width" constant="42" id="lMn-y9-myg"/>
+                                <constraint firstAttribute="width" constant="41" id="lMn-y9-myg"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhL-2T-1yv">
-                            <rect key="frame" x="158" y="10" width="42" height="50"/>
+                            <rect key="frame" x="155" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="42" id="Wn9-Nr-G31"/>
+                                <constraint firstAttribute="width" constant="41" id="Wn9-Nr-G31"/>
                                 <constraint firstAttribute="height" constant="50" id="nYd-EI-tFY"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
@@ -66,32 +66,32 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-xG-kGw">
-                            <rect key="frame" x="208" y="10" width="42" height="50"/>
+                            <rect key="frame" x="204" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="V4F-oU-os3"/>
-                                <constraint firstAttribute="width" constant="42" id="oyI-Ib-tcd"/>
+                                <constraint firstAttribute="width" constant="41" id="oyI-Ib-tcd"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdA-dR-FDQ">
-                            <rect key="frame" x="258" y="10" width="42" height="50"/>
+                            <rect key="frame" x="253" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="TGE-Dl-Cbc"/>
-                                <constraint firstAttribute="width" constant="42" id="d3Y-3R-73s"/>
+                                <constraint firstAttribute="width" constant="41" id="d3Y-3R-73s"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-Co-HgB">
-                            <rect key="frame" x="58" y="10" width="42" height="50"/>
+                            <rect key="frame" x="57" y="10" width="41" height="50"/>
                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="42" id="8yN-B8-HAb"/>
+                                <constraint firstAttribute="width" constant="41" id="8yN-B8-HAb"/>
                                 <constraint firstAttribute="height" constant="50" id="aaR-EF-wlH"/>
                             </constraints>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="40"/>
@@ -111,9 +111,9 @@
                             </connections>
                         </button>
                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yaH-E2-Erh">
-                            <rect key="frame" x="8" y="68" width="292" height="4"/>
+                            <rect key="frame" x="8" y="68" width="286" height="4"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="292" id="lPz-1n-h5O"/>
+                                <constraint firstAttribute="width" constant="286" id="lPz-1n-h5O"/>
                             </constraints>
                         </progressView>
                     </subviews>
