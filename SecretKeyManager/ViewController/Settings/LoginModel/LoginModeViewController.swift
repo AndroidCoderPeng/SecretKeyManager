@@ -25,21 +25,6 @@ class LoginModeViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: CGRect.zero)
-        // 设置已选的解锁方式
-        let loginModel = defaults.get(for: loginModeKey)
-        switch loginModel {
-        case "1":
-
-            break
-        case "2":
-
-            break
-        case "3":
-
-            break
-        default:
-            break
-        }
     }
 }
 
@@ -69,6 +54,34 @@ extension LoginModeViewController: UITableViewDataSource {
         }
         cell.titleLableView.text = LOGIN_MODE_TITLE_ARRAY[indexPath.row]
         cell.selectionStyle = .none
+        // 允许截屏
+        let canCapture = defaults.get(for: canCaptureKey) ?? false
+        if canCapture {
+            if indexPath.row == 0 {
+                cell.rightSwitchView.setOn(canCapture, animated: true)
+            }
+        }
+        // 设置已选的解锁方式
+        let loginModel = defaults.get(for: loginModeKey)
+        switch loginModel {
+        case "1":
+            if indexPath.row == 3 {
+                cell.rightSwitchView.setOn(true, animated: true)
+            }
+            break
+        case "2":
+            if indexPath.row == 2 {
+                cell.rightSwitchView.setOn(true, animated: true)
+            }
+            break
+        case "3":
+            if indexPath.row == 1 {
+                cell.rightSwitchView.setOn(true, animated: true)
+            }
+            break
+        default:
+            break
+        }
         cell.rightSwitchView.tag = indexPath.row
         cell.rightSwitchView.addTarget(self, action: #selector(switchAction), for: .valueChanged)
         return cell
@@ -78,6 +91,7 @@ extension LoginModeViewController: UITableViewDataSource {
         switch sender.tag {
         case 0:
             // 截屏开关
+            defaults.set(sender.isOn, for: canCaptureKey)
             break
         case 1:
             // 数字密码
@@ -100,12 +114,6 @@ extension LoginModeViewController: UITableViewDataSource {
             if sender.isOn {
                 defaults.set("1", for: loginModeKey)
             } else {
-                defaults.set("0", for: loginModeKey)
-            }
-            break
-        case 4:
-            // 关闭密码
-            if sender.isOn {
                 defaults.set("0", for: loginModeKey)
             }
             break

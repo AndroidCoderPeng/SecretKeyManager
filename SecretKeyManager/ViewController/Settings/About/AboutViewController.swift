@@ -48,10 +48,9 @@ extension AboutViewController: UITableViewDelegate {
             navigationController?.pushViewController(privacyController, animated: true)
             break
         case 2:
-
-            break
-        case 3:
-
+            let logController = UpdateLogViewController()
+            logController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(logController, animated: true)
             break
         default:
             break
