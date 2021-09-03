@@ -26,6 +26,7 @@ class HomePageViewController: UIViewController {
     private var timer: Timer?
     private var countSeconds = 30
     private let tips = "本应用不含任何网络通信功能，密码经加密之后仅保存在设备上，不会上传到任何网络存储介质，您可以放心使用！如果依旧不放心，可以在您设备飞行模式下使用本应用！"
+    private var valueDelegate: TransferValueDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +34,6 @@ class HomePageViewController: UIViewController {
         navigationItem.title = "密码箱"
         // Do any additional setup after loading the view.
         setupShadow()
-        randomNumber()
-        timerProgressView.progress = 0.0
-        //  设置已走过的进度条颜色
-        timerProgressView.progressTintColor = .mainThemeColor
-        //  设置未走过进度的进度条颜色
-        timerProgressView.trackTintColor = .systemGray5
-        timer = initTimer()
         // 设置tips
         tipsLabel.text = tips
         // 设置UICollectionView
@@ -54,6 +48,27 @@ class HomePageViewController: UIViewController {
             make.bottomMargin.equalTo(-25)
             make.rightMargin.equalTo(-10)
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        randomNumber()
+        timerProgressView.progress = 0.0
+        //  设置已走过的进度条颜色
+        timerProgressView.progressTintColor = .mainThemeColor
+        //  设置未走过进度的进度条颜色
+        timerProgressView.trackTintColor = .systemGray5
+        timer = initTimer()
+        // 监听扫码结果
+        notificationCenter.addObserver(forName: .scanResultNotification, object: nil, queue: .main, using: { [self] notification in
+            let alertController = UIAlertController(title: "扫描结果", message: notification.object as? String, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "知道了", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        })
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        timer?.invalidate()
+        timer = nil
     }
 
     func setupShadow() {
@@ -101,25 +116,60 @@ class HomePageViewController: UIViewController {
     }
 
     @IBAction func scanQrCode(_ sender: Any) {
-        let scnnerController = ScannerViewController()
-        scnnerController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(scnnerController, animated: true)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        // 监听扫码结果
-        notificationCenter.addObserver(forName: .scanResultNotification, object: nil, queue: .main, using: { [self] notification in
-            let alertController = UIAlertController(title: "扫描结果", message: notification.object as? String, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "知道了", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-        })
+        let scannerController = ScannerViewController()
+        scannerController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(scannerController, animated: true)
     }
 
     deinit {
         notificationCenter.removeObserver(self)
     }
 
-    @IBAction func addSecret(_ sender: Any) {
+    @IBAction func addSecretAction(_ sender: Any) {
+        let actionSheetController = UIAlertController()
+        actionSheetController.addAction(UIAlertAction(title: "添加账号", style: .default, handler: { [self] _ in
+            addSecret()
+        }))
+        actionSheetController.addAction(UIAlertAction(title: "搜索账号", style: .default, handler: { [self] _ in
+            searchSecret()
+        }))
+        actionSheetController.addAction(UIAlertAction(title: "取消", style: .cancel))
+        present(actionSheetController, animated: true, completion: nil)
+    }
+
+    private func addSecret() {
+        let addController = AddSecretViewController()
+        addController.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(addController, animated: true)
+    }
+
+    private func searchSecret() {
+        var inputText: UITextField!
+        let msgAlertCtr = UIAlertController(title: "搜索账号", message: nil, preferredStyle: .alert)
+        msgAlertCtr.addTextField { textField in
+            inputText = textField
+            inputText.placeholder = "请输入要搜索的账号"
+        }
+        let actionOK = UIAlertAction(title: "搜索", style: .default) { [self] (_: UIAlertAction) -> Void in
+            let keyword = inputText.text
+            if keyword == "" {
+                return
+            }
+
+            let resultController = ResultListViewController()
+            // 委托代理
+            valueDelegate = resultController
+            let transferDic: NSDictionary = ["keyword": keyword!]
+            valueDelegate.transfer(controller: self, dic: transferDic)
+            resultController.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(resultController, animated: true)
+        }
+        let actionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        // 设置取消按钮颜色为红色
+        actionCancel.setValue(UIColor.red, forKey: "titleTextColor")
+        msgAlertCtr.addAction(actionOK)
+        msgAlertCtr.addAction(actionCancel)
+        present(msgAlertCtr, animated: true, completion: nil)
     }
 }
 
